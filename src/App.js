@@ -1,7 +1,11 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
+import { Layout } from './commons/Layout';
+import { ScrollToTop, RouteWrapper } from './helpers/router';
+import Loadable from 'react-loadable';
+import LoadingCSS from './commons/LoadingCSS';
+
 
 const componentList = {
   'Destination': import('./components/Destination'),
@@ -9,6 +13,11 @@ const componentList = {
   'Detail': import('./components/Detail'),
   'Voucher': import('./components/Voucher')
 };
+
+const setUpLoadable = (component) => Loadable({
+  loader: () => componentList[component],
+  loading: LoadingCSS
+});
 
 const Destination = setUpLoadable('Destination');
 const Home = setUpLoadable('Home');
