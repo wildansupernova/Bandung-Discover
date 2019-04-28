@@ -80,7 +80,7 @@
 @media only screen and (max-width: 600px) {
   .example {background: red;}
   .va-height-card {
-    height: 300px;
+    /* height: 300px; */
   }
 }
 
@@ -88,7 +88,7 @@
 @media only screen and (max-width: 768px) {
   .example {background: green;}
   .va-height-card {
-    height: 300px;
+    /* height: 300px; */
   }
 }
 
