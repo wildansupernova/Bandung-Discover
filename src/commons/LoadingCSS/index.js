@@ -4,6 +4,7 @@ class LoadingCSS extends Component {
   render() {
     return (
       <div className="loading">
+        Loading Bandung Discovery
       </div>
     );
   }

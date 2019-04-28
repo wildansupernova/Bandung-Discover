@@ -12,7 +12,9 @@ const componentList = {
   'Home': import('./components/Home'),
   'Detail': import('./components/Detail'),
   'Voucher': import('./components/Voucher'),
-  'DestinationFavoritPage': import('./pages/DestinationFavoritPage')
+  'DestinationFavoritPage': import('./pages/DestinationFavoritPage'),
+  'DetailDestinationPage': import('./pages/DetailDestinationPage'),
+  'ListVoucherPage': import('./pages/ListVoucherPage'),
 };
 
 const setUpLoadable = (component) => Loadable({
@@ -25,6 +27,8 @@ const Home = setUpLoadable('Home');
 const Detail = setUpLoadable('Detail');
 const Voucher = setUpLoadable('Voucher');
 const DestinationFavoritPage = setUpLoadable('DestinationFavoritPage');
+const DetailDestinationPage = setUpLoadable('DetailDestinationPage');
+const ListVoucherPage = setUpLoadable('ListVoucherPage');
 
 function App() {
   return (
@@ -37,6 +41,9 @@ function App() {
         <Layout navbar exact path="/voucher" component={Voucher} />
         <Layout navbar exact path="/detail" component={Detail} />
         <Layout navbar exact path="/favoritdestinasi" component={DestinationFavoritPage} />
+        <Layout navbar exact path="/detaildestinasi" component={DetailDestinationPage} />
+        <Layout navbar exact path="/myvoucher" component={ListVoucherPage} />
+
         {/* <Layout navbar exact path="/404" component={NoMatch} />
         <Layout navbar exact component={NoMatch} /> */}
       </RouteWrapper>
