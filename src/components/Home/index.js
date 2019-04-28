@@ -76,6 +76,10 @@ class Home extends Component {
 
   handleScanAdmin(code) {
     const managerToken = localStorage.getItem('managerToken');
+    this.setState(prevState => ({
+      isModalScanOpenAdmin: !prevState.isModalScanOpenAdmin
+    }));
+    
     axios({
       method: 'delete',
       url: 'http://192.168.43.138:3000/voucher/'+code+'/5cc552bcdd25a709d9d98015',
@@ -83,11 +87,7 @@ class Home extends Component {
         'Authorization': 'Bearer ' + managerToken,
         'Content-Type': 'application/x-www-form-urlencoded'
       }
-    }).then(() => {
-      this.setState(prevState => ({
-        isModalScanOpenAdmin: !prevState.isModalScanOpenAdmin
-      }));
-    });
+    })
   }
 
   toggleRefreshModal() {
