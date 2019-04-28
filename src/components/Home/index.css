@@ -30,6 +30,17 @@
   padding: 0.8em;
 }
 
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 12px;
+  width: 12px;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+  background: white;
+}
+
 .Home {
   padding-left: 0%;
   padding-right: 0%;
@@ -59,7 +70,7 @@
     font-weight: bold;
     font-family: 'Quicksand';
     font-style: normal;
-    margin-left: 8%;
+    margin-left: 12%;
     margin-right: 40%;
 }
 
@@ -68,13 +79,13 @@
     font-family: 'Comfortaa';
     font-style: normal;
     font-weight: normal;
-    margin-left: 8%;
+    margin-left: 12%;
     margin-right: 40%;
     margin-top: 30px;
 }
 
 .jumbotron-button {
-    margin-left: 8%;
+    margin-left: 12%;
     margin-top: 2%;
     margin-bottom: 2%;
     background: rgb(124, 49, 120);
@@ -122,8 +133,8 @@
   .card-container {
     padding-left: 0%;
     padding-right: 0%;
-    margin-left: 20px;
-    margin-right: 5px;
+    /* margin-left: 20px;
+    margin-right: 5px; */
     overflow: hidden;
   }
 

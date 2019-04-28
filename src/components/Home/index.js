@@ -34,7 +34,6 @@ class Home extends Component {
         </Row>
         {/* Hero Section */}
         <Row>
-          <Col sm={{offset: 0,  size: 3}}></Col>
           <Col sm={{offset: 0,  size: 6}} className="jumbotron-container">
             <Jumbotron className="jumbotron-home">
               {(pathname == '/') ? <h1 className="jumbotron-title">Selamat datang di Bandung Discovery</h1> : 
@@ -49,12 +48,10 @@ class Home extends Component {
               ): <br/>}
             </Jumbotron>          
           </Col>
-          <Col sm={{offset: 0,  size: 3}}></Col>
         </Row>
         {(pathname == '/') ? 
           // Cards section
-          <Row>
-            <Col xs={{offset: 0, size: 0}} sm={{offset: 0,  size: 3}} md={{offset: 0,  size: 3}}></Col>
+          <Row className="d-flex justify-content-center">
             <Col  className="card-container" xs={{offset: 0,  size: 3}} sm={{offset: 0,  size: 2}} md={{offset: 0,  size: 2}}>
               <Card className="card-wrapper">
                 <CardBody>
@@ -72,6 +69,7 @@ class Home extends Component {
               </Card>
             </Col>
             <Col className="card-container" xs={{offset: 0,  size: 3}} sm={{offset: 0,  size: 2}} md={{offset: 0,  size: 2}}>
+            <Col xs={{offset:2, size:1}}></Col>
               <Card className="card-wrapper">
                 <CardBody>
                   <CardImg className="card-icon" src={destinationIcon}></CardImg>
@@ -79,7 +77,6 @@ class Home extends Component {
                 </CardBody>
               </Card>
             </Col>
-            <Col xs={{offset: 0, size: 1}} sm={{offset: 0,  size: 3}} md={{offset: 0,  size: 3}}></Col>
           </Row>
         : 
         <Container>
