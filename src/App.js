@@ -32,6 +32,7 @@ function App() {
     <ScrollToTop timeout={200}>
       <RouteWrapper timeout={400}>
         <Layout navbar exact path="/" component={Home} />
+        <Layout navbar exact path="/admin" component={Home} />
         <Layout navbar exact path="/destination" component={Destination} />
         <Layout navbar exact path="/voucher" component={Voucher} />
         <Layout navbar exact path="/detail" component={Detail} />
