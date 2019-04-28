@@ -10,6 +10,7 @@ import voucherIcon from '../../assets/voucher-icon.png';
 import destinationIcon from '../../assets/destination-icon.png';
 import CardMostFavorite from '../CardMostFavorite';
 import { bubble as Menu } from 'react-burger-menu';
+import { Link } from 'react-router-dom/cjs/react-router-dom';
 
 class Home extends Component {
   constructor(props) {
@@ -44,7 +45,7 @@ class Home extends Component {
               }
               <br/>
               {(pathname == '/') ? (
-                <Button className="jumbotron-button" color="primary" size="sm">Selengkapnya</Button>
+                <Link to='/favoritdestinasi'><Button className="jumbotron-button" color="primary" size="sm">Selengkapnya</Button></Link>
               ): <br/>}
             </Jumbotron>          
           </Col>
@@ -61,21 +62,25 @@ class Home extends Component {
               </Card>
             </Col>
             <Col className="card-container" xs={{offset: 0,  size: 3}} sm={{offset: 0,  size: 2}} md={{offset: 0,  size: 2}}>
-              <Card className="card-wrapper">
-                <CardBody>
-                  <CardImg className="card-icon" src={voucherIcon}></CardImg>
-                  <CardTitle className="card-title"><a href="/myvoucher">Daftar Voucherku</a></CardTitle>
-                </CardBody>
-              </Card>
+              <Link to="/myvoucher">
+                <Card className="card-wrapper">
+                  <CardBody>
+                    <CardImg className="card-icon" src={voucherIcon}></CardImg>
+                    <CardTitle className="card-title"><a href="">Daftar Voucherku</a></CardTitle>
+                  </CardBody>
+                </Card>
+              </Link>
             </Col>
             <Col className="card-container" xs={{offset: 0,  size: 3}} sm={{offset: 0,  size: 2}} md={{offset: 0,  size: 2}}>
             <Col xs={{offset:2, size:1}}></Col>
-              <Card className="card-wrapper">
-                <CardBody>
-                  <CardImg className="card-icon" src={destinationIcon}></CardImg>
-                  <CardTitle className="card-title"><a href="/favoritdestinasi">Destinasi Favoritku</a></CardTitle>
-                </CardBody>
-              </Card>
+              <Link to="/favoritdestinasi">
+                <Card className="card-wrapper">
+                  <CardBody>
+                    <CardImg className="card-icon" src={destinationIcon}></CardImg>
+                    <CardTitle className="card-title"><a href="">Destinasi Favoritku</a></CardTitle>
+                  </CardBody>
+                </Card>
+              </Link>
             </Col>
           </Row>
         : 
