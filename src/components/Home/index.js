@@ -1,20 +1,11 @@
 import React from 'react';
+import { Button } from 'reactstrap';
 
-class Home extends React.PureComponent {
-    constructor(props) {
-        super(props);
-        this.state = {
-          destinations: [],
-        }
-        // this.handleProjectChange = this.handleProjectChange.bind(this);
-        // this.handleBackButton = this.handleBackButton.bind(this);
-      }
 
-      render() {
-        return (
-            <h1>Hello world!</h1>
-        )
-      }
-}
+const Home = (props) => {
+  return (
+    <Button color="danger">Danger!</Button>
+  );
+};
 
 export default Home;

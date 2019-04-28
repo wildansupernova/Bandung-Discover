@@ -5,7 +5,7 @@ import { Layout } from './commons/Layout';
 import { ScrollToTop, RouteWrapper } from './helpers/router';
 import Loadable from 'react-loadable';
 import LoadingCSS from './commons/LoadingCSS';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const componentList = {
   'Destination': import('./components/Destination'),
