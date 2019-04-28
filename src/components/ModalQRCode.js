@@ -9,7 +9,7 @@ class ModalExample extends React.Component {
     return (
       <div>
         <Modal isOpen={this.props.isOpen} toggle={this.props.toggle} className={this.props.className}>
-          <ModalHeader toggle={this.toggle}>Modal title</ModalHeader>
+          <ModalHeader toggle={this.toggle}>{this.props.title}</ModalHeader>
           <ModalBody>
               <img width="100%" src={this.props.qrcode}/>
           </ModalBody>

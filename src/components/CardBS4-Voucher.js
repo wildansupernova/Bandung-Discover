@@ -77,7 +77,7 @@ class CardBS4 extends React.Component {
                   fontWeight: 'bolder',
                   fontSize: '0.8rem'
                 }} onClick={this.toggleModal}>Gunakan</button>
-                <ModelQRCode toggle={this.toggleRefreshModal} isOpen={this.state.modal} qrcode={this.state.qrcode}/>
+                <ModelQRCode title={title} toggle={this.toggleRefreshModal} isOpen={this.state.modal} qrcode={this.state.qrcode}/>
               </div>
             </div>
             

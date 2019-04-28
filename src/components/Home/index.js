@@ -11,11 +11,73 @@ import destinationIcon from '../../assets/destination-icon.png';
 import CardMostFavorite from '../CardMostFavorite';
 import { bubble as Menu } from 'react-burger-menu';
 import { Link } from 'react-router-dom/cjs/react-router-dom';
-
+import QRScanner from '../QRCodeScanner';
+import axios from 'axios';
 class Home extends Component {
   constructor(props) {
     super(props);
-    this.state = { activeIndex: 0 };
+    this.state = { 
+      activeIndex: 0,
+      isModalScanOpen: false,
+      isModalScanOpenAdmin: false,
+    };
+    this.handleScan = this.handleScan.bind(this);
+    this.toggleRefreshModal = this.toggleRefreshModal.bind(this);
+    this.handleScanAdmin = this.handleScanAdmin.bind(this);
+    this.toggleRefreshModalAdmin = this.toggleRefreshModalAdmin.bind(this);
+  }
+
+  handleScan(code) {
+    const touristToken = localStorage.getItem('touristToken');
+    axios({
+      method: 'put',
+      url: 'http://192.168.43.138:3000/voucher/decrement/5cc545032b4cdf078052ea53',
+      headers: {
+        'Authorization': 'Bearer ' + touristToken,
+        'Content-Type': 'application/x-www-form-urlencoded'
+      }
+    }).then((response) => {
+      return axios({
+        method: 'post',
+        url: 'http://192.168.43.138:3000/voucher/'+code+'/5cc552bcdd25a709d9d98015',
+        headers: {
+          'Authorization': 'Bearer ' + touristToken,
+          'Content-Type': 'application/x-www-form-urlencoded'
+        }
+      });
+    }).then(() => {
+      this.setState(prevState => ({
+        isModalScanOpen: !prevState.isModalScanOpen
+      }));
+    });
+  }
+
+  handleScanAdmin(code) {
+    const managerToken = localStorage.getItem('managerToken');
+    axios({
+      method: 'delete',
+      url: 'http://192.168.43.138:3000/voucher/'+code+'/5cc552bcdd25a709d9d98015',
+      headers: {
+        'Authorization': 'Bearer ' + managerToken,
+        'Content-Type': 'application/x-www-form-urlencoded'
+      }
+    }).then(() => {
+      this.setState(prevState => ({
+        isModalScanOpenAdmin: !prevState.isModalScanOpenAdmin
+      }));
+    });
+  }
+
+  toggleRefreshModal() {
+    this.setState(prevState => ({
+      isModalScanOpen: !prevState.isModalScanOpen
+    }));
+  }
+
+  toggleRefreshModalAdmin() {
+    this.setState(prevState => ({
+      isModalScanOpenAdmin: !prevState.isModalScanOpenAdmin
+    }));
   }
 
   showSettings (event) {
@@ -57,7 +119,8 @@ class Home extends Component {
               <Card className="card-wrapper">
                 <CardBody>
                   <CardImg className="card-icon" src={qrIcon}></CardImg>
-                  <CardTitle className="card-title">Scan Voucher</CardTitle>
+                  <CardTitle onClick={this.toggleRefreshModal} className="card-title">Scan Voucher</CardTitle>
+                  <QRScanner handleScan={this.handleScan} toggle={this.toggleRefreshModal} isOpen={this.state.isModalScanOpen} />
                 </CardBody>
               </Card>
             </Col>
@@ -131,7 +194,8 @@ class Home extends Component {
                 <Card>
                   <CardBody>
                     <CardImg src={qrIcon}></CardImg>
-                    <CardTitle className="card-subtitle-admin">Scan Voucher</CardTitle>
+                    <CardTitle onClick={this.toggleRefreshModalAdmin} className="card-subtitle-admin">Scan Voucher</CardTitle>
+                    <QRScanner handleScan={this.handleScanAdmin} toggle={this.toggleRefreshModalAdmin} isOpen={this.state.isModalScanOpenAdmin} />
                   </CardBody>
                 </Card>
               </Col>
