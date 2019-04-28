@@ -1,11 +1,12 @@
 import React from 'react';
 import { Card, CardImg, CardText, CardBody,
   CardTitle, CardSubtitle, Button } from 'reactstrap';
+import { Link } from 'react-router-dom/cjs/react-router-dom';
 
 const CardMostFavorite = (props) => {
   const { title } = props;
   return (
-    <div>
+      <Link to="/detaildestinasi" style={{ textDecoration: 'none', color: 'black' }}>
       <Card>
         <CardImg top width="100%" src={props.linkImage} alt="Card image cap" />
         <CardBody>
@@ -18,7 +19,7 @@ const CardMostFavorite = (props) => {
           {/* <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText> */}
         </CardBody>
       </Card>
-    </div>
+      </Link>
   );
 };
 
