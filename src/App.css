@@ -33,11 +33,15 @@
 }
 
 .text-card-1 {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
 }
 
 .text-card-2 {
     font-size: 0.9rem;
+}
+
+.text-card-0 {
+  font-size: 0.6rem;
 }
 
 .flex-container {
@@ -58,6 +62,45 @@
   color: #BC9CFF;
 }
 
+
+.font-quicksand {
+  font-family: 'Quicksand';
+}
+
+.va-font-bold {
+  font-weight: bold;
+}
+
+.font-comfortaa {
+  font-family: 'Comfortaa';
+}
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .example {background: red;}
+  .va-height-card {
+    height: 300px;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 768px) {
+  .example {background: green;}
+  .va-height-card {
+    height: 300px;
+  }
+}
+
+
+
 @import url('https://fonts.googleapis.com/css?family=Quicksand');
 @import url('https://fonts.googleapis.com/css?family=Comfortaa:300');
 
+
+
+.test-stroke {
+  background: linear-gradient(45deg,#BC9CFF, #8BA4F9);
+  border-radius: 30px !important;
+  line-height: 16px !important;
+}
