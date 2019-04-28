@@ -13,6 +13,7 @@ import { bubble as Menu } from 'react-burger-menu';
 import { Link } from 'react-router-dom/cjs/react-router-dom';
 import QRScanner from '../QRCodeScanner';
 import axios from 'axios';
+import ModelQRCode from '../ModalQRCode';
 class Home extends Component {
   constructor(props) {
     super(props);
@@ -20,11 +21,32 @@ class Home extends Component {
       activeIndex: 0,
       isModalScanOpen: false,
       isModalScanOpenAdmin: false,
+      isModalQROpen: false,
+      qrcode: " ",
     };
+    this.toggleModalQR = this.toggleModalQR.bind(this);
+    this.toggleRefreshModalQR = this.toggleRefreshModalQR.bind(this);
     this.handleScan = this.handleScan.bind(this);
     this.toggleRefreshModal = this.toggleRefreshModal.bind(this);
     this.handleScanAdmin = this.handleScanAdmin.bind(this);
     this.toggleRefreshModalAdmin = this.toggleRefreshModalAdmin.bind(this);
+  }
+
+  componentDidMount(){
+    const touristToken = localStorage.getItem('touristToken');
+    axios({
+      method: 'get',
+      url: 'http://192.168.43.138:3000/qrcode/manager',
+      headers: {
+        'Authorization': 'Bearer ' + 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYzU0NTAzMmI0Y2RmMDc4MDUyZWE1MyIsImlhdCI6MTU1NjQzMjEzMSwiZXhwIjoxNTU2NTE4NTMxfQ.XOfAFTjKquZbgoh7ndsB-RztpJr7V8qHVRN7l0k1IQg',
+        'Content-Type': 'application/x-www-form-urlencoded'
+      }
+    }).then((response) => {
+      this.setState({
+        ...this.state,
+        qrcode: response.data.data,
+      });
+    });
   }
 
   handleScan(code) {
@@ -77,6 +99,19 @@ class Home extends Component {
   toggleRefreshModalAdmin() {
     this.setState(prevState => ({
       isModalScanOpenAdmin: !prevState.isModalScanOpenAdmin
+    }));
+  }
+
+  toggleModalQR(){
+    this.setState(prevState => ({
+      isModalQROpen: !prevState.isModalQROpen
+    }));
+  }
+
+  toggleRefreshModalQR() {
+    // this.props.onRefresh();
+    this.setState(prevState => ({
+      isModalQROpen: !prevState.isModalQROpen
     }));
   }
 
@@ -203,11 +238,12 @@ class Home extends Component {
                 <Card>
                   <CardBody>
                     <CardImg src={voucherIcon}></CardImg>
-                    <CardTitle className="card-subtitle-admin">Beri Voucher</CardTitle>
+                    <CardTitle className="card-subtitle-admin"><a onClick={this.toggleModalQR}>Beri Voucher</a></CardTitle>
                   </CardBody>
                 </Card>
               </Col>
           </Row>
+          <ModelQRCode toggle={this.toggleRefreshModalQR} isOpen={this.state.isModalQROpen} qrcode={this.state.qrcode}/>
           </Container>
         }
       </Container>  
