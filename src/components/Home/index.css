@@ -1,6 +1,17 @@
-.container {
+.Home {
+  padding-left: 0%;
+  padding-right: 0%;
+  margin-left: 0%;
+  margin-right: 0%;
+  overflow: hidden;
+}
+
+.jumbotron-container {
     padding-left: 0%;
     padding-right: 0%;
+    margin-left: 0%;
+    margin-right: 0%;
+    overflow: hidden;
 }
 
 .jumbotron-home {
@@ -67,19 +78,37 @@
       display: block;
       margin-left: auto;
       margin-right: auto;
-      width: 60%;
-      height: auto;
+      /* width: 60%; */
+      /* height: auto; */
+  }
+
+  *, ::after, ::before {
+    /* display: none; */
+    box-sizing: content-box;
   }
 
   .card-container {
-      width: 75%;
-      height: auto;
+    padding-left: 0%;
+    padding-right: 0%;
+    margin-left: 20px;
+    margin-right: 5px;
+    overflow: hidden;
   }
 
-  .card-title {
+  .card-wrap {
+    width: 90%;
+    height: 80%;
+  }
+
+  .Home .card-title {
+      /* font */
       text-align: center;
       font-family: 'Quicksand';
       font-weight: bold;
       margin-top: 5%;
-      margin-bottom: 5%;
+      margin-bottom: 15%;
+  }
+
+  .card-body {
+    padding-top: 5%;
   }

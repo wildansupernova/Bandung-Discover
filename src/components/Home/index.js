@@ -5,8 +5,11 @@ import { Jumbotron, Button,
       } from 'reactstrap';
 import './index.css';
 import qrIcon from '../../assets/qr-icon.png';
+import voucherIcon from '../../assets/voucher-icon.png';
 
-class Example extends Component {
+var inlineCardBody
+
+class Home extends Component {
   constructor(props) {
     super(props);
     this.state = { activeIndex: 0 };
@@ -14,54 +17,48 @@ class Example extends Component {
 
   render() {
     return (
-      <Container>
+      <Container className="Home">
         {/* Hero Section */}
         <Row>
           <Col sm={{offset: 0,  size: 3}}></Col>
-          <Col sm={{offset: 0,  size: 6}} className="container">
+          <Col sm={{offset: 0,  size: 6}} className="jumbotron-container">
             <Jumbotron className="jumbotron-home">
-              <Row>
-                <h1 className="jumbotron-title">Selamat datang di Bandung Discovery</h1>
-              </Row>
-              <Row>
-                <p className="jumbotron-description">Temukan destinasi wisata kreatif di Bandung</p>
-              </Row>
-              <Row>
-                <br/>
-                <Button className="jumbotron-button" color="primary" size="sm">Selengkapnya</Button>
-              </Row>
+              <h1 className="jumbotron-title">Selamat datang di Bandung Discovery</h1>
+              <p className="jumbotron-description">Temukan destinasi wisata kreatif di Bandung</p>
+              <br/>
+              <Button className="jumbotron-button" color="primary" size="sm">Selengkapnya</Button>
             </Jumbotron>          
           </Col>
           <Col sm={{offset: 0,  size: 3}}></Col>
         </Row>
         {/* Cards Section */}
         <Row>
-          <Col xs="0" sm={{offset: 0,  size: 3}}></Col>
-          <Col sm={{offset: 0,  size: 2}} className="container">
-            <Card className="card-container">
+          <Col xs={{offset: 0, size: 0}} sm={{offset: 0,  size: 3}} md={{offset: 0,  size: 3}}></Col>
+          <Col  className="card-container" xs={{offset: 0,  size: 3}} sm={{offset: 0,  size: 2}} md={{offset: 0,  size: 2}}>
+            <Card className="card-wrap">
               <CardBody>
                 <CardImg className="card-icon" src={qrIcon}></CardImg>
                 <CardTitle className="card-title">Card Title</CardTitle>
               </CardBody>
             </Card>
           </Col>
-          <Col sm={{offset: 0,  size: 2}} className="container">
-            <Card className="card-container">
+          <Col className="card-container" xs={{offset: 0,  size: 3}} sm={{offset: 0,  size: 2}} md={{offset: 0,  size: 2}}>
+            <Card className="card-wrap">
               <CardBody>
                 <CardImg className="card-icon" src={qrIcon}></CardImg>
                 <CardTitle className="card-title">Card Title</CardTitle>
               </CardBody>
             </Card>
           </Col>
-          <Col sm={{offset: 0,  size: 2}} className="container">
-            <Card className="card-container">
+          <Col className="card-container" xs={{offset: 0,  size: 3}} sm={{offset: 0,  size: 2}} md={{offset: 0,  size: 2}}>
+            <Card className="card-wrap">
               <CardBody>
                 <CardImg className="card-icon" src={qrIcon}></CardImg>
                 <CardTitle className="card-title">Card Title</CardTitle>
               </CardBody>
             </Card>
           </Col>
-          <Col xs="0" sm={{offset: 0,  size: 3}}></Col>
+          <Col xs={{offset: 0, size: 1}} sm={{offset: 0,  size: 3}} md={{offset: 0,  size: 3}}></Col>
         </Row>
       </Container>  
       // 
@@ -70,4 +67,4 @@ class Example extends Component {
 }
 
 
-export default Example;
+export default Home;
