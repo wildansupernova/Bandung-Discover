@@ -73,6 +73,9 @@ class Home extends Component {
 
   handleScan(code) {
     const touristToken = localStorage.getItem('touristToken');
+    this.setState(prevState => ({
+      isModalScanOpen: false
+    }));
     axios({
       method: 'put',
       url: 'https://b7e6fe9e.ngrok.io/voucher/decrement/5cc545032b4cdf078052ea53',
@@ -89,17 +92,13 @@ class Home extends Component {
           'Content-Type': 'application/x-www-form-urlencoded'
         }
       });
-    }).then(() => {
-      this.setState(prevState => ({
-        isModalScanOpen: !prevState.isModalScanOpen
-      }));
     });
   }
 
   handleScanAdmin(code) {
     const managerToken = localStorage.getItem('managerToken');
     this.setState(prevState => ({
-      isModalScanOpenAdmin: !prevState.isModalScanOpenAdmin
+      isModalScanOpenAdmin: false
     }));
 
     axios({
