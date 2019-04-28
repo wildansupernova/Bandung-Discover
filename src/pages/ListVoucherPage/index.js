@@ -5,6 +5,7 @@ import {
 import './index.css';
 import CardBS4_Voucher from '../../components/CardBS4-Voucher';
 import axios from 'axios';
+import { Link } from 'react-router-dom/cjs/react-router-dom';
 
 export default class DestinationFavoritPage extends React.Component {
   constructor(props) {
@@ -20,7 +21,7 @@ export default class DestinationFavoritPage extends React.Component {
     const touristToken = localStorage.getItem('touristToken');
     axios({
       method: 'get',
-      url: 'http://192.168.43.138:3000/voucher/5cc552bcdd25a709d9d98015',
+      url: 'https://b7e6fe9e.ngrok.io/voucher/5cc552bcdd25a709d9d98015',
       headers: {
         'Authorization': 'Bearer ' + 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYzU1MmJjZGQyNWE3MDlkOWQ5ODAxNSIsImlhdCI6MTU1NjQzNTY0NCwiZXhwIjoxNTU2NTIyMDQ0fQ.48UYdDxf0m5Rl7jsEtBsIR-X9dYlMUMZRMnFsp70VUs',
         'Content-Type': 'application/x-www-form-urlencoded'
@@ -37,7 +38,7 @@ export default class DestinationFavoritPage extends React.Component {
     const touristToken = localStorage.getItem('touristToken');
     axios({
       method: 'get',
-      url: 'http://192.168.43.138:3000/voucher/5cc552bcdd25a709d9d98015',
+      url: 'https://b7e6fe9e.ngrok.io/voucher/5cc552bcdd25a709d9d98015',
       headers: {
         'Authorization': 'Bearer ' + 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYzU1MmJjZGQyNWE3MDlkOWQ5ODAxNSIsImlhdCI6MTU1NjQzNTY0NCwiZXhwIjoxNTU2NTIyMDQ0fQ.48UYdDxf0m5Rl7jsEtBsIR-X9dYlMUMZRMnFsp70VUs',
         'Content-Type': 'application/x-www-form-urlencoded'
@@ -69,8 +70,10 @@ export default class DestinationFavoritPage extends React.Component {
       <div>
         <Navbar color="light" light expand="md" className="flex-container">
           <div>
-            <i className="material-icons">arrow_back</i>
-            <NavbarBrand href="/" className="font-quicksand" style={{fontWeight : 'bold'}} >Daftar Voucherku</NavbarBrand>
+            <Link to="/" style={{ textDecoration: 'none', color: 'black' }}>
+              <i className="material-icons">arrow_back</i>
+              <NavbarBrand href="/" className="font-quicksand" style={{fontWeight : 'bold'}} >Daftar Voucherku</NavbarBrand>
+            </Link>
           </div>
           <div>
             <i className="material-icons">search</i>

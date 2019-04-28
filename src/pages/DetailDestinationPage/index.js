@@ -3,6 +3,8 @@ import {
   Navbar,
   NavbarBrand, Row, Col, Card, CardTitle, CardText} from 'reactstrap';
 import './index.css';
+import { Link } from 'react-router-dom/cjs/react-router-dom';
+
 
 export default class DetailDestinationPage extends React.Component {
 
@@ -17,9 +19,11 @@ export default class DetailDestinationPage extends React.Component {
           <div className="col-md-7 pr-0 dest-container pl-0">
             <img width="100%" src="https://www.mongabay.co.id/wp-content/uploads/2018/03/Udjo2.jpg" alt="Card image cap" class="card-img-top"/>
               <Navbar light expand="md" className="flex-container dest-top-right">
-                <div>
-                  <i className="material-icons">arrow_back</i>
-                </div>
+                <Link to="/favoritdestinasi" style={{ textDecoration: 'none', color: 'white' }}>
+                  <div>
+                    <i className="material-icons">arrow_back</i>
+                  </div>
+                </Link>
                   {/* <NavbarBrand href="/">Destinasi Favoritku</NavbarBrand> */}
               </Navbar>
           </div>

@@ -76,19 +76,29 @@
 }
 
 
-/* Extra small devices (phones, 600px and down) */
+/* Extra small devices (phones, 600px and down)
 @media only screen and (max-width: 600px) {
   .example {background: red;}
   .va-height-card {
-    /* height: 300px; */
+
   }
-}
+} */
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (max-width: 768px) {
   .example {background: green;}
-  .va-height-card {
-    /* height: 300px; */
+  .height-card {
+    height: 120px !important;
+  }
+
+  .height-div{
+    height: 310px !important;
+  }
+}
+@media only screen and (min-width: 769px) {
+  .example {background: green;}
+  .height-card {
+    height: 358px !important;
   }
 }
 

@@ -37,7 +37,7 @@ class CardBS4 extends React.Component {
     const { idVoucher } = this.props;
     axios({
       method: 'get',
-      url: 'http://192.168.43.138:3000/qrcode/tourist/'+idVoucher,
+      url: 'https://b7e6fe9e.ngrok.io/qrcode/tourist/'+idVoucher,
       headers: {
         'Authorization': 'Bearer ' + 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYzU1MmJjZGQyNWE3MDlkOWQ5ODAxNSIsImlhdCI6MTU1NjQzNTY0NCwiZXhwIjoxNTU2NTIyMDQ0fQ.48UYdDxf0m5Rl7jsEtBsIR-X9dYlMUMZRMnFsp70VUs',
         'Content-Type': 'application/x-www-form-urlencoded'

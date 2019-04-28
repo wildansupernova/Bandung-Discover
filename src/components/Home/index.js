@@ -31,7 +31,7 @@ class Home extends Component {
     const touristToken = localStorage.getItem('touristToken');
     axios({
       method: 'put',
-      url: 'http://192.168.43.138:3000/voucher/decrement/5cc545032b4cdf078052ea53',
+      url: 'https://b7e6fe9e.ngrok.io/voucher/decrement/5cc545032b4cdf078052ea53',
       headers: {
         'Authorization': 'Bearer ' + touristToken,
         'Content-Type': 'application/x-www-form-urlencoded'
@@ -39,7 +39,7 @@ class Home extends Component {
     }).then((response) => {
       return axios({
         method: 'post',
-        url: 'http://192.168.43.138:3000/voucher/'+code+'/5cc552bcdd25a709d9d98015',
+        url: 'https://b7e6fe9e.ngrok.io/voucher/'+code+'/5cc552bcdd25a709d9d98015',
         headers: {
           'Authorization': 'Bearer ' + touristToken,
           'Content-Type': 'application/x-www-form-urlencoded'
@@ -57,10 +57,10 @@ class Home extends Component {
     this.setState(prevState => ({
       isModalScanOpenAdmin: !prevState.isModalScanOpenAdmin
     }));
-    
+
     axios({
       method: 'delete',
-      url: 'http://192.168.43.138:3000/voucher/'+code+'/5cc552bcdd25a709d9d98015',
+      url: 'https://b7e6fe9e.ngrok.io/voucher/'+code+'/5cc552bcdd25a709d9d98015',
       headers: {
         'Authorization': 'Bearer ' + managerToken,
         'Content-Type': 'application/x-www-form-urlencoded'

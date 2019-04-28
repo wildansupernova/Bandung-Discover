@@ -22,13 +22,16 @@ export default class DestinationFavoritPage extends React.Component {
         <div className="container">
         <Row>
           <Col sm="6" md="6" xs="6" className="mt-3">
-            <CardBS4 title="Saung Udjo"/>
+            <CardBS4 title="Saung Udjo" linkImage="https://www.mongabay.co.id/wp-content/uploads/2018/03/Udjo2.jpg"/>
           </Col>
           <Col sm="6" md="6" xs="6" className="mt-3">
-            <CardBS4 title="Kampung Gajah"/>
+            <CardBS4 title="Kampung Pasundan" linkImage="https://www.ayobandung.com/images-bandung/post/articles/2015/12/08/5506/cp1eliiukaaz3ea.jpg"/>
           </Col>
           <Col sm="6" md="6" xs="6" className="mt-3">
-            <CardBS4 title="Garasi"/>
+            <CardBS4 title="Kampung Wayang" linkImage="http://www.infobdg.com/v2/wp-content/uploads/2015/03/6-1024x768.jpg"/>
+          </Col>
+          <Col sm="6" md="6" xs="6" className="mt-3">
+            <CardBS4 title="Kampung Budaya Sukasari" linkImage="https://www.ayobandung.com/images-bandung/post/articles/2018/11/10/40381/kampung_budaya_sukasari.jpg"/>
           </Col>
         </Row>
         </div>

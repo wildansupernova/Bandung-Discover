@@ -8,8 +8,8 @@ const CardBS4 = (props) => {
   return (
     <div>
       <Link to="/detaildestinasi" style={{ textDecoration: 'none', color: 'black' }}>
-      <Card>
-        <CardImg top width="100%" src="https://www.mongabay.co.id/wp-content/uploads/2018/03/Udjo2.jpg" alt="Card image cap" />
+      <Card className="height-div">
+        <CardImg top width="100%" src={props.linkImage} alt="Card image cap" className="height-card" />
         <CardBody>
             <CardTitle className="text-card-2 font-quicksand">{title}</CardTitle>
           <div className="color-green-light">
