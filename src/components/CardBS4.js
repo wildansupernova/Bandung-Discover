@@ -18,7 +18,7 @@ const CardBS4 = (props) => {
           </div>
           <div className="color-purple-light">
             <i className="material-icons text-card-1">location_on</i>
-            <span className="text-card-1 ml-2 font-comfortaa">Cicahuem Bandung</span>
+            <span className="text-card-1 ml-2 font-comfortaa">{props.lokasi}</span>
           </div>
           {/* <CardSubtitle>Card subtitle</CardSubtitle> */}
           {/* <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText> */}

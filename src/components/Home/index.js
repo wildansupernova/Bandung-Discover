@@ -23,6 +23,7 @@ class Home extends Component {
       isModalScanOpenAdmin: false,
       isModalQROpen: false,
       qrcode: " ",
+      totalStok: 0
     };
     this.toggleModalQR = this.toggleModalQR.bind(this);
     this.toggleRefreshModalQR = this.toggleRefreshModalQR.bind(this);
@@ -30,15 +31,16 @@ class Home extends Component {
     this.toggleRefreshModal = this.toggleRefreshModal.bind(this);
     this.handleScanAdmin = this.handleScanAdmin.bind(this);
     this.toggleRefreshModalAdmin = this.toggleRefreshModalAdmin.bind(this);
+    this.updateStokVoucher = this.updateStokVoucher.bind(this);
   }
 
   componentDidMount(){
-    const touristToken = localStorage.getItem('touristToken');
+    const managerToken = localStorage.getItem('managerToken');
     axios({
       method: 'get',
-      url: 'http://192.168.43.138:3000/qrcode/manager',
+      url: 'https://b7e6fe9e.ngrok.io/qrcode/manager',
       headers: {
-        'Authorization': 'Bearer ' + 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYzU0NTAzMmI0Y2RmMDc4MDUyZWE1MyIsImlhdCI6MTU1NjQzMjEzMSwiZXhwIjoxNTU2NTE4NTMxfQ.XOfAFTjKquZbgoh7ndsB-RztpJr7V8qHVRN7l0k1IQg',
+        'Authorization': 'Bearer ' + managerToken,
         'Content-Type': 'application/x-www-form-urlencoded'
       }
     }).then((response) => {
@@ -47,6 +49,26 @@ class Home extends Component {
         qrcode: response.data.data,
       });
     });
+
+    this.updateStokVoucher();
+
+  }
+
+  updateStokVoucher() {
+    const managerToken = localStorage.getItem('managerToken');
+    axios({
+      method: 'get',
+      url: 'https://b7e6fe9e.ngrok.io/users/5cc545032b4cdf078052ea53',
+      headers: {
+        'Authorization': 'Bearer ' + managerToken,
+        'Content-Type': 'application/x-www-form-urlencoded'
+      }
+    }).then((response) => {
+      this.setState({
+        ...this.state,
+        totalStok: response.data.data.numVoucher,
+      });
+    });    
   }
 
   handleScan(code) {
@@ -113,6 +135,7 @@ class Home extends Component {
     this.setState(prevState => ({
       isModalQROpen: !prevState.isModalQROpen
     }));
+    this.updateStokVoucher();
   }
 
   showSettings (event) {
@@ -187,7 +210,7 @@ class Home extends Component {
             <Col sm="6">
               <Card body>
                 <CardTitle className="card-title-admin">Anda memiliki</CardTitle>
-                <CardText className="card-title-admin">stok 50 voucher</CardText>
+                <CardText className="card-title-admin">stok {this.state.totalStok} voucher</CardText>
                 <Row>
                   <Col sm="3" xs="3">
                     <Button className="card-button" size="sm">Tambah</Button>
@@ -213,10 +236,10 @@ class Home extends Component {
               <div className="container">
                 <Row>
                   <Col sm="6" md="6" xs="6" className="mt-3">
-                    <CardMostFavorite title="Saung Udjo"/>
+                    <CardMostFavorite lokasi="Cicaheum, Bandung" linkImage="https://www.mongabay.co.id/wp-content/uploads/2018/03/Udjo2.jpg" title="Saung Udjo"/>
                   </Col>
                   <Col sm="6" md="6" xs="6" className="mt-3">
-                    <CardMostFavorite title="Kampung Gajah"/>
+                    <CardMostFavorite lokasi="Regol, Bandung" linkImage="https://www.ayobandung.com/images-bandung/post/articles/2015/12/08/5506/cp1eliiukaaz3ea.jpg" title="Kampung Pasundan"/>
                   </Col>
                 </Row>
               </div>
