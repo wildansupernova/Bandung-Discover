@@ -11,7 +11,8 @@ const componentList = {
   'Destination': import('./components/Destination'),
   'Home': import('./components/Home'),
   'Detail': import('./components/Detail'),
-  'Voucher': import('./components/Voucher')
+  'Voucher': import('./components/Voucher'),
+  'DestinationFavoritPage': import('./pages/DestinationFavoritPage')
 };
 
 const setUpLoadable = (component) => Loadable({
@@ -23,6 +24,7 @@ const Destination = setUpLoadable('Destination');
 const Home = setUpLoadable('Home');
 const Detail = setUpLoadable('Detail');
 const Voucher = setUpLoadable('Voucher');
+const DestinationFavoritPage = setUpLoadable('DestinationFavoritPage');
 
 function App() {
   return (
@@ -33,6 +35,7 @@ function App() {
         <Layout navbar exact path="/destination" component={Destination} />
         <Layout navbar exact path="/voucher" component={Voucher} />
         <Layout navbar exact path="/detail" component={Detail} />
+        <Layout navbar exact path="/favoritdestinasi" component={DestinationFavoritPage} />
         {/* <Layout navbar exact path="/404" component={NoMatch} />
         <Layout navbar exact component={NoMatch} /> */}
       </RouteWrapper>
