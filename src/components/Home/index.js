@@ -38,15 +38,15 @@ class Home extends Component {
             <Card className="card-wrap">
               <CardBody>
                 <CardImg className="card-icon" src={qrIcon}></CardImg>
-                <CardTitle className="card-title">Card Title</CardTitle>
+                <CardTitle className="card-title">Scan Voucher</CardTitle>
               </CardBody>
             </Card>
           </Col>
           <Col className="card-container" xs={{offset: 0,  size: 3}} sm={{offset: 0,  size: 2}} md={{offset: 0,  size: 2}}>
             <Card className="card-wrap">
               <CardBody>
-                <CardImg className="card-icon" src={qrIcon}></CardImg>
-                <CardTitle className="card-title">Card Title</CardTitle>
+                <CardImg className="card-icon" src={voucherIcon}></CardImg>
+                <CardTitle className="card-title">Daftar Voucherku</CardTitle>
               </CardBody>
             </Card>
           </Col>

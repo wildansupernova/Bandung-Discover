@@ -82,7 +82,7 @@
       /* height: auto; */
   }
 
-  *, ::after, ::before {
+  .Home *, ::after, ::before {
     /* display: none; */
     box-sizing: content-box;
   }
@@ -107,6 +107,7 @@
       font-weight: bold;
       margin-top: 5%;
       margin-bottom: 15%;
+      font-size: 2.7vw;
   }
 
   .card-body {
