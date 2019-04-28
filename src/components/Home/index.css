@@ -1,0 +1,85 @@
+.container {
+    padding-left: 0%;
+    padding-right: 0%;
+}
+
+.jumbotron-home {
+    background: linear-gradient(to right, rgb(32, 32, 65), rgba(0,0,0,0)), url("../../assets/gedung-sate.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: fill;
+    width: 100%;
+}
+
+.jumbotron-title {
+    color: white;
+    font-weight: bold;
+    font-family: 'Quicksand';
+    font-style: normal;
+    margin-left: 8%;
+    margin-right: 40%;
+}
+
+.jumbotron-description {
+    color: white;
+    font-family: 'Comfortaa';
+    font-style: normal;
+    font-weight: normal;
+    margin-left: 8%;
+    margin-right: 40%;
+    margin-top: 30px;
+}
+
+.jumbotron-button {
+    margin-left: 8%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    background: rgb(124, 49, 120);
+    border-color: rgba(0,0,0,0);
+}
+
+@media screen and (min-width: 769px) {
+    .jumbotron-title {
+      font-size: 30px;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .jumbotron-title {
+      font-size: 18px;
+    }
+  }
+
+  @media screen and (min-width: 769px) {
+    .jumbotron-description {
+      font-size: 20px;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .jumbotron-description {
+      font-size: 12px;
+    }
+  }
+
+  /* Cards section */
+  .card-icon {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 60%;
+      height: auto;
+  }
+
+  .card-container {
+      width: 75%;
+      height: auto;
+  }
+
+  .card-title {
+      text-align: center;
+      font-family: 'Quicksand';
+      font-weight: bold;
+      margin-top: 5%;
+      margin-bottom: 5%;
+  }
