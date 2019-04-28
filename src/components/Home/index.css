@@ -82,7 +82,7 @@
       /* height: auto; */
   }
 
-  .Home *, ::after, ::before {
+  .Home .jumbotron-container *, ::after, ::before {
     /* display: none; */
     box-sizing: content-box;
   }
@@ -95,21 +95,49 @@
     overflow: hidden;
   }
 
-  .card-wrap {
+  .card-wrapper {
     width: 90%;
     height: 80%;
+    border-radius: 15px;
   }
 
-  .Home .card-title {
+  .Home .card-wrapper .card-title {
       /* font */
       text-align: center;
       font-family: 'Quicksand';
       font-weight: bold;
       margin-top: 5%;
       margin-bottom: 15%;
-      font-size: 2.7vw;
+      font-size: 2.25vw;
   }
 
   .card-body {
     padding-top: 5%;
   }
+
+  /* Destination Section */
+  .Home .destination-title {
+    margin-top: 5px;
+    font-family: 'Comfortaa';
+    margin-left: 8%;
+    font-size: 3vw;
+  }
+
+  .Home .destination-href {
+    font-size: 2.6vw;
+  }
+
+  .Home .destination-wrapper {
+    background: rgba(251, 251, 251, 1);
+    margin-bottom: 5px;
+  }
+
+/* .flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+  
+.flex-container > div {
+    margin: 3px;
+} */
