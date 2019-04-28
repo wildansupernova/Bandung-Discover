@@ -64,7 +64,7 @@ class Home extends Component {
               <Card className="card-wrapper">
                 <CardBody>
                   <CardImg className="card-icon" src={voucherIcon}></CardImg>
-                  <CardTitle className="card-title">Daftar Voucherku</CardTitle>
+                  <CardTitle className="card-title"><a href="/myvoucher">Daftar Voucherku</a></CardTitle>
                 </CardBody>
               </Card>
             </Col>
@@ -73,7 +73,7 @@ class Home extends Component {
               <Card className="card-wrapper">
                 <CardBody>
                   <CardImg className="card-icon" src={destinationIcon}></CardImg>
-                  <CardTitle className="card-title">Destinasi Favoritku</CardTitle>
+                  <CardTitle className="card-title"><a href="/favoritdestinasi">Destinasi Favoritku</a></CardTitle>
                 </CardBody>
               </Card>
             </Col>
