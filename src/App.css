@@ -32,6 +32,32 @@
   }
 }
 
+.text-card-1 {
+    font-size: 0.8rem;
+}
+
+.text-card-2 {
+    font-size: 0.9rem;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-container > div {
+  margin: 3px;
+}
+
+.color-green-light {
+  color: #6FCF97;
+}
+
+.color-purple-light {
+  color: #BC9CFF;
+}
+
 @import url('https://fonts.googleapis.com/css?family=Quicksand');
 @import url('https://fonts.googleapis.com/css?family=Comfortaa:300');
 

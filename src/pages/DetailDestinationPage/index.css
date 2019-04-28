@@ -1,0 +1,19 @@
+.dest-container {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.dest-top-right {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+}
+
+.font-quicksand {
+    font-family: 'Quicksand';
+}
+
+.font-comfortaa {
+    font-family: 'Comfortaa';
+}

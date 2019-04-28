@@ -2,7 +2,7 @@ import React from 'react';
 import {
   Navbar,
   NavbarBrand, Row, Col} from 'reactstrap';
-import './index.css';
+import './DestFav.css';
 import CardBS4 from '../../components/CardBS4';
 
 export default class DestinationFavoritPage extends React.Component {
@@ -20,17 +20,17 @@ export default class DestinationFavoritPage extends React.Component {
           </div>
         </Navbar>
         <div className="container">
-        <Row>
-          <Col sm="6" md="6" xs="6" className="mt-3">
-            <CardBS4/>
-          </Col>
-          <Col sm="6" md="6" xs="6" className="mt-3">
-            <CardBS4/>
-          </Col>
-          <Col sm="6" md="6" xs="6" className="mt-3">
-            <CardBS4/>
-          </Col>
-        </Row>
+          <Row>
+            <Col sm="6" md="6" xs="6" className="mt-3">
+              <CardBS4/>
+            </Col>
+            <Col sm="6" md="6" xs="6" className="mt-3">
+              <CardBS4/>
+            </Col>
+            <Col sm="6" md="6" xs="6" className="mt-3">
+              <CardBS4/>
+            </Col>
+          </Row>
         </div>
       </div>
     );
